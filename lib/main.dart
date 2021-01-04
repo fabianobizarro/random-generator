@@ -7,7 +7,7 @@ void main() {
   runApp(MultiProvider(
     providers: [
       Provider<NumbersBloc>(
-        create: (context) => NumbersBloc(),
+        create: (context) => NumbersBloc(initialize: true),
       )
     ],
     child: MyApp(),

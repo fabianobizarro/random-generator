@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:random_generator/src/models/numbers_bloc.dart';
-import 'package:random_generator/src/models/random_generator.dart';
-import 'package:provider/provider.dart';
+import 'package:random_generator/src/pages/number_settings_form.dart';
 
 import 'numbers_gridview.dart';
 
@@ -17,7 +16,13 @@ class HomePage extends StatelessWidget {
           actions: [
             IconButton(
               icon: Icon(Icons.settings),
-              onPressed: () {},
+              onPressed: () async {
+                await showModalBottomSheet(
+                    context: context,
+                    builder: (ctx) => NumberSettingsForm(),
+                    barrierColor: Colors.grey[10],
+                    enableDrag: true);
+              },
             ),
           ],
         ),
